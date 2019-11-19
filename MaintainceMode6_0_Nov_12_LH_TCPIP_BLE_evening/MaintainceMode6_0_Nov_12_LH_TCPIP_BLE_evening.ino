@@ -1,5 +1,3 @@
-//ALproject_aj
-
 #include <Ethernet2.h>
 #include <RS232.h>
 //#include <RS485.h>
@@ -1239,7 +1237,7 @@ void maintainceMode()
    // {
   
   if((buttonStateAutoManualSel  == INPUT_OFF) && (buttonStateAutoMode  == INPUT_OFF))
-  {Serial.println("automanual = OFF && AutoMode = OFF");
+  {
      testingInPut();
      while(((buttonStateGantryControl  == INPUT_ON) && (buttonStateCrossOverControl == INPUT_OFF)) && ( (buttonStateJackUpDnControl == INPUT_OFF) && (buttonStateJackFwdRevControl == INPUT_OFF)) \
            && ((buttonStateWheelControl == INPUT_OFF)) && (buttonStateAutoManualSel  == INPUT_OFF) && (buttonStateAutoMode  == INPUT_OFF) )
@@ -1669,7 +1667,7 @@ void onJackForward()
 {
   //Serial.println("Jack Forward");
   
- if(buttonStateJackFwdRevEnd == INPUT_ON) 
+ if(buttonStateJackFwdRevEnd != INPUT_ON) 
   {
     offJack();
   }
@@ -3115,7 +3113,7 @@ void MotorControlScanFrontSensor()
   Serial1.println("{MFIS}");
   Serial1.println("{MFIS}");
   CommandString = "{MFIS}";
-  for ( noOfPulsesCount = 0; noOfPulsesCount < 600; noOfPulsesCount++) //lft1
+  for ( noOfPulsesCount = 0; noOfPulsesCount < 800; noOfPulsesCount++) //lft1
   {
       pulseMistON();  
       delayMicroseconds(timerValue);
@@ -3324,7 +3322,7 @@ void MotorControlScanBackSensor()
 
   CommandString = "{MBIS}";
 
-  for(noOfPulsesCount = 0;noOfPulsesCount < 600;noOfPulsesCount++)//lft2
+  for(noOfPulsesCount = 0;noOfPulsesCount < 800;noOfPulsesCount++)//lft2
   {
     pulseMistON();  
     delayMicroseconds(timerValue);
