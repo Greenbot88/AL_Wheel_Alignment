@@ -3113,7 +3113,7 @@ void MotorControlScanFrontSensor()
   Serial1.println("{MFIS}");
   Serial1.println("{MFIS}");
   CommandString = "{MFIS}";
-  for ( noOfPulsesCount = 0; noOfPulsesCount < 800; noOfPulsesCount++) //lft1
+  for ( noOfPulsesCount = 0; noOfPulsesCount < 600; noOfPulsesCount++) //lft1
   {
       pulseMistON();  
       delayMicroseconds(timerValue);
@@ -3322,7 +3322,7 @@ void MotorControlScanBackSensor()
 
   CommandString = "{MBIS}";
 
-  for(noOfPulsesCount = 0;noOfPulsesCount < 800;noOfPulsesCount++)//lft2
+  for(noOfPulsesCount = 0;noOfPulsesCount < 600;noOfPulsesCount++)//lft2
   {
     pulseMistON();  
     delayMicroseconds(timerValue);
