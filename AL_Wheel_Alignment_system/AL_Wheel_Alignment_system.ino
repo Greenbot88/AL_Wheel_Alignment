@@ -7,7 +7,7 @@
 //#include <Timer.h>
 
 /*defines for Macros*/
-#define ver "version: nov-12-2019"
+#define ver "version: nov-19-2019"
 #define ON_OUTPUT HIGH
 #define OFF_OUTPUT LOW
 #define INPUT_ON        1
